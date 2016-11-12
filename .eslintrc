@@ -11,9 +11,6 @@
     "comma-dangle": 0,
     "no-use-before-define": 0
   },
-  # "plugins": [
-  #   "import"
-  # ],
   "settings": {
     "import/resolver": "node"
   }
