@@ -14,7 +14,7 @@ describe('listLanguageCodes', function () {
 
   it('should return language codes', function () {
     expect(languageCultures.listLanguageCodes().every(
-      l => l.match(/[a-z]{2}-[A-Z]{2}/)
+      l => l.match(/^[a-z]{2,3}-[A-Z]{2}$/)
     )).to.be.true;
   });
 });
@@ -48,3 +48,27 @@ describe('getCountryLanguages', function () {
     expect(languageCultures.getCountryLanguages('invalid country code')).to.be.have.length.of(0);
   });
 });
+
+// describe('listLanguages', function () {
+//   it('should return an array', function () {
+//     expect(languageCultures.listLanguages()).to.be.an('array');
+//   });
+//
+//   it('should return culture codes', function () {
+//     expect(languageCultures.listLanguages().every(
+//       l => l.match(/^[a-z]{2,3}$/)
+//     )).to.be.true;
+//   });
+// });
+//
+// describe('listCultures', function () {
+//   it('should return an array', function () {
+//     expect(languageCultures.listCultures()).to.be.an('array');
+//   });
+//
+//   it('should return culture codes', function () {
+//     expect(languageCultures.listCultures().every(
+//       l => l.match(/^[A-Z]{2}$/)
+//     )).to.be.true;
+//   });
+// });

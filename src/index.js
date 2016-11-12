@@ -1,4 +1,4 @@
-import languages from './languages';
+import { languages } from './languages';
 
 function listLanguageCodes() {
   return Object.keys(languages);
@@ -27,7 +27,6 @@ function getCountryLanguages(countryCode) {
 }
 
 export {
-  languages,
   listLanguageCodes,
   getLanguageName,
   getLanguageCultures,
