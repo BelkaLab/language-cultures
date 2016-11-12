@@ -1,90 +1,44 @@
-> _Material takes cues from contemporary architecture, road signs, pavement marking tape, and athletic courts. Color should be **unexpected** and **vibrant**._ ([https://material.google.com/style/color.html](https://material.google.com/style/color.html))
+# Language-cultures
 
-# Material color hashing
+A ready-to-go language-cultures codes utility
 
-Hash a string to a Material Design color
-
-[![npm version](https://badge.fury.io/js/material-color-hash.svg)](https://badge.fury.io/js/material-color-hash)
+[![npm version](https://badge.fury.io/js/language-cultures.svg)](https://badge.fury.io/js/language-cultures)
 ![Alt text](https://img.shields.io/badge/license-MIT-green.svg?style=flat)
 
-A dead-simple library to hash a string to a {backgroundColor, textColor} tuple from the official Material Design palette.
-
-Great for dynamically coloring your UI elements (badges, list icons, ..) with good-looking, vibrant colors and ensured text legibility.
-
-# Interactive Demo
-**[http://belkalab.github.io/material-color-hash/](http://belkalab.github.io/material-color-hash)**
-![http://belkalab.github.io/material-color-hash/](example/screen.png)
-
-## Usage
-
 ```bash
-$ npm install material-color-hash
+$ npm install --save language-cultures
 ```
 
 ```js
-var toMaterialStyle = require('material-color-hash');
-// or, if you are on ES6:
-// import toMaterialStyle from 'material-color-hash'
+// import all the module
+import langCultures from 'language-cultures';
 
-/* basic usage */
-var fooStyle = toMaterialStyle('foo');
-// fooStyle: {
-//   backgroundColor: '#00BCD4',
-//   color: 'rgba(0, 0, 0, 0.87)',
-//   materialColorName: 'Cyan'
-// }
+langCultures.getLanguageName('en-US');
 
-/* select a different shade (default is 500) */
-var fooStyle200 = toMaterialStyle('foo', '200');
-// fooStyle200: {
-//   backgroundColor: '#80DEEA',
-//   color: 'rgba(0, 0, 0, 0.87)',
-//   materialColorName: 'Cyan'
-// }
+// or import the single functions
+import { getLanguageName } from 'language-cultures';
 
-var barStyle = toMaterialStyle('bar', 500);
-// barStyle: {
-//   backgroundColor: '#2196F3',
-//   color: 'rgba(255, 255, 255, 1)',
-//   materialColorName: 'Blue'
-// }
-
-/* also works with emoji! */
-var emojiStyle = toMaterialStyle('😎');
-// emojiStyle: {
-//   backgroundColor: '#FFEB3B',
-//   color: 'rgba(0, 0, 0, 0.87)',
-//   materialColorName: 'Yellow'
-// }
+getLanguageName('en-US')
 ```
 
-The return object can be fed directly as a style prop to React components:
+## API
 
+It basically exports a few useful functions to list and describe *language codes*, complete with their respective *cultures* (e.g. the variants for each country in which is spoken), so for example `en-US`, `it-IT`, `es-ES`, ..
 
-```js
-import toMaterialStyle from 'material-color-hash';
+Here are the functions:
 
-const MaterialBadge = (props) => {
-	const style = toMaterialStyle(props.text);
-
-	return (
-		<div
-			className="badge"
-			style={style}
-		>
-			{props.text}
-		</div>
-	);
-}
-```
-
-For more information about Material Design colors and how to use them, check out the [official Material Design docs](https://material.google.com/style/color.html) by Google
+| Functions (w/ example parameters) | Description                                         | Output                                        |
+|-----------------------------------|-----------------------------------------------------|-----------------------------------------------|
+| listLanguageCodes()               | lists all the known language codes                  | ['af-ZA','ar-AE','ar-BH','ar-DZ','ar-EG', ..] |
+| getLanguageName('en-US')          | describes the language                              | 'English - United States'                     |
+| getLanguageCultures('en')         | lists all the language cultures of a given language | ['en-AU','en-BZ','en-CA','en-CB','en-GB', ..] |
+| getCountryLanguages('CH')         | lists all the languages spoken in a country         | ['de-CH', 'fr-CH', 'it-CH']                   |
 
 ## Contributors
 [Giovanni Frigo](https://github.com/giovannifrigo), Developer @[Belka](https://github.com/BelkaLab)
 
 ## License
-material-color-hash is Copyright (c) 2016 Belka, srl. It is free software, and may be redistributed under the terms specified in the LICENSE file. (TL;DR: MIT license)
+language-cultures is Copyright (c) 2016 Belka, srl. It is free software, and may be redistributed under the terms specified in the LICENSE file. (TL;DR: MIT license)
 
 ## About Belka
 ![Alt text](http://s2.postimg.org/rcjk3hf5x/logo_rosso.jpg)
