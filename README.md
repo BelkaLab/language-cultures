@@ -11,9 +11,9 @@ $ npm install --save language-cultures
 
 ```js
 // import all the module
-import langCultures from 'language-cultures';
+import languageCultures from 'language-cultures';
 
-langCultures.getLanguageName('en-US');
+languageCultures.getLanguageName('en-US');
 
 // or import the single functions
 import { getLanguageName } from 'language-cultures';
@@ -27,12 +27,12 @@ It basically exports a few useful functions to list and describe *language codes
 
 Here are the functions:
 
-| Functions (w/ example parameters) | Description                                         | Output                                        |
-|-----------------------------------|-----------------------------------------------------|-----------------------------------------------|
-| listLanguageCodes()               | lists all the known language codes                  | ['af-ZA','ar-AE','ar-BH','ar-DZ','ar-EG', ..] |
-| getLanguageName('en-US')          | describes the language                              | 'English - United States'                     |
-| getLanguageCultures('en')         | lists all the language cultures of a given language | ['en-AU','en-BZ','en-CA','en-CB','en-GB', ..] |
-| getCountryLanguages('CH')         | lists all the languages spoken in a country         | ['de-CH', 'fr-CH', 'it-CH']                   |
+| Functions (w/ example parameters) | Description                                         | Output                                            |
+|-----------------------------------|-----------------------------------------------------|---------------------------------------------------|
+| listLanguageCodes()               | lists all the known language codes                  | ['af-ZA', 'ar-AE', 'ar-BH', 'ar-DZ', 'ar-EG', ..] |
+| getLanguageName('en-US')          | describes the language                              | 'English - United States'                         |
+| getLanguageCultures('en')         | lists all the language cultures of a given language | ['en-AU', 'en-BZ', 'en-CA', 'en-CB', 'en-GB', ..] |
+| getCountryLanguages('CH')         | lists all the languages spoken in a country         | ['de-CH', 'fr-CH', 'it-CH']                       |
 
 ## Contributors
 [Giovanni Frigo](https://github.com/giovannifrigo), Developer @[Belka](https://github.com/BelkaLab)

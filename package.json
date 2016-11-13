@@ -10,6 +10,10 @@
     "prepublish": "npm run build && npm run test",
     "test": "mocha test/*.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BelkaLab/language-cultures.git"
+  },
   "keywords": [
     "culture",
     "codes",
