@@ -1,4 +1,8 @@
 example
 src
 docs
+test
 
+.babelrc
+.editorconfig
+.eslintrc
