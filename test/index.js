@@ -24,7 +24,7 @@ describe('getLanguageName', function () {
     expect(languageCultures.getLanguageName('en-US')).to.be.a('string');
   });
 
-  it('should return undefined', function () {
+  it('should return undefined when no parameter is passed', function () {
     expect(languageCultures.getLanguageName()).to.be.undefined
   });
 
@@ -38,7 +38,7 @@ describe('getLanguageCultures', function () {
     expect(languageCultures.getLanguageCultures('en')).to.be.an('array');
   });
 
-  it('should return undefined', function () {
+  it('should return undefined when no parameter is passed', function () {
     expect(languageCultures.getLanguageCultures()).to.be.undefined
   });
 
@@ -50,6 +50,10 @@ describe('getLanguageCultures', function () {
 describe('getCountryLanguages', function () {
   it('should return an array of languages', function () {
     expect(languageCultures.getCountryLanguages('CH')).to.be.an('array');
+  });
+
+  it('should return undefined when no parameter is passed', function () {
+    expect(languageCultures.getCountryLanguages()).to.be.undefined
   });
 
   it('should return an empty array on invalid country code', function () {
