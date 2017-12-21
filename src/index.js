@@ -5,14 +5,21 @@ function listLanguageCodes() {
 }
 
 function getLanguageName(langCode) {
-  if (langCode in languages) {
+
+  if (langCode && langCode in languages) {
     return languages[langCode].name;
   }
 
   return undefined;
+
 }
 
 function getLanguageCultures(langCode) {
+
+  if (!langCode) {
+    return;
+  }
+
   const prefix = `${langCode.toLowerCase()}-`;
 
   return listLanguageCodes()
@@ -20,6 +27,11 @@ function getLanguageCultures(langCode) {
 }
 
 function getCountryLanguages(countryCode) {
+
+  if (!countryCode) {
+    return;
+  }
+
   const suffix = `-${countryCode.toUpperCase()}`;
 
   return listLanguageCodes()
