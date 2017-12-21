@@ -5,37 +5,33 @@ function listLanguageCodes() {
 }
 
 function getLanguageName(langCode) {
-
   if (langCode && langCode in languages) {
     return languages[langCode].name;
   }
 
   return undefined;
-
 }
 
 function getLanguageCultures(langCode) {
-
   if (!langCode) {
-    return;
+    return undefined;
   }
 
   const prefix = `${langCode.toLowerCase()}-`;
 
   return listLanguageCodes()
-    .filter(c => c.indexOf(prefix) === 0);
+    .filter(c => c.startsWith(prefix));
 }
 
 function getCountryLanguages(countryCode) {
-
   if (!countryCode) {
-    return;
+    return undefined;
   }
 
   const suffix = `-${countryCode.toUpperCase()}`;
 
   return listLanguageCodes()
-    .filter(c => c.indexOf(suffix) === c.length - suffix.length);
+    .filter(c => c.endsWith(suffix));
 }
 
 export {
