@@ -24,6 +24,10 @@ describe('getLanguageName', function () {
     expect(languageCultures.getLanguageName('en-US')).to.be.a('string');
   });
 
+  it('should return undefined', function () {
+    expect(languageCultures.getLanguageName()).to.be.undefined
+  });
+
   it('should return undefined on invalid key', function () {
     expect(languageCultures.getLanguageName('invalid key')).to.be.undefined;
   });
