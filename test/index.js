@@ -38,6 +38,10 @@ describe('getLanguageCultures', function () {
     expect(languageCultures.getLanguageCultures('en')).to.be.an('array');
   });
 
+  it('should return undefined', function () {
+    expect(languageCultures.getLanguageCultures()).to.be.undefined
+  });
+
   it('should return an empty array on invalid lang code', function () {
     expect(languageCultures.getLanguageCultures('invalid lang code')).to.be.have.length.of(0);
   });
