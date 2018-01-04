@@ -38,7 +38,7 @@ Here are the functions:
 [Giovanni Frigo](https://github.com/giovannifrigo), Developer @[Belka](https://github.com/BelkaLab)
 
 ## License
-language-cultures is Copyright (c) 2016 Belka, srl. It is free software, and may be redistributed under the terms specified in the LICENSE file. (TL;DR: MIT license)
+language-cultures is Copyright (c) 2016-2018 Belka srl. It is free software, and may be redistributed under the terms specified in the LICENSE file. (TL;DR: MIT license)
 
 ## About Belka
 ![Alt text](http://s2.postimg.org/rcjk3hf5x/logo_rosso.jpg)
