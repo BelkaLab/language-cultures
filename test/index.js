@@ -57,6 +57,17 @@ describe('getCountryLanguages', function () {
   });
 });
 
+describe('getCountryData', function () {
+  it('should return object with country code data', function () {
+    const data = languageCultures.getCountryData('be');
+    expect(data.name).to.equal('Belgium');
+  });
+
+  it('should return undefind', function () {
+    const data = languageCultures.getCountryData('nocountrycode');
+    expect(data).to.be.undefined;
+  });
+});
 // describe('listLanguages', function () {
 //   it('should return an array', function () {
 //     expect(languageCultures.listLanguages()).to.be.an('array');
