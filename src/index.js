@@ -1,4 +1,5 @@
 import { languages } from './languages';
+import { countries } from 'country-data';
 
 function listLanguageCodes() {
   return Object.keys(languages);
@@ -34,7 +35,27 @@ function getCountryLanguages(countryCode) {
     .filter(c => c.endsWith(suffix));
 }
 
+function getCountryData(c) {
+
+  if (!c || typeof c !== 'string') {
+    return; 
+  }
+
+  const uc = c.toUpperCase();
+  if (Object.prototype.hasOwnProperty.call(countries, uc)) {
+    const { name, currencies, languages } = countries[uc];
+    return {
+      name,
+      currencies, 
+      languages,
+      country_code: c
+    }
+  }
+
+}
+
 export {
+  getCountryData,
   listLanguageCodes,
   getLanguageName,
   getLanguageCultures,
