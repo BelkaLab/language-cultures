@@ -1,6 +1,6 @@
 {
   "name": "language-cultures",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A ready-to-go language-cultures codes utility",
   "main": "./lib/index.js",
   "scripts": {
