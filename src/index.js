@@ -5,8 +5,21 @@ function listLanguageCodes() {
 }
 
 function getLanguageName(langCode) {
-  if (langCode && langCode in languages) {
-    return languages[langCode].name;
+  if (!langCode) {
+    return undefined;
+  }
+
+  // validate input to be in the format `[lang]-[country]`
+  const [lang, country] = langCode.split('-');
+  if(!lang || !country) {
+    return undefined;
+  }
+
+  // fix case on input: `[lang]-[COUNTRY]`
+  const fixedlangCode = `${lang.toLowerCase()}-${country.toUpperCase()}`;
+
+  if (fixedlangCode in languages) {
+    return languages[fixedlangCode].name;
   }
 
   return undefined;

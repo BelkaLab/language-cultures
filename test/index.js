@@ -31,6 +31,11 @@ describe('getLanguageName', function () {
   it('should return undefined on invalid key', function () {
     expect(languageCultures.getLanguageName('invalid key')).to.be.undefined;
   });
+
+  it('should accept case-insensitive inputs', function () {
+    expect(languageCultures.getLanguageName('en-us')).to.be.a('string');
+    expect(languageCultures.getLanguageName('EN-us')).to.be.a('string');
+  });
 });
 
 describe('getLanguageCultures', function () {
@@ -45,6 +50,11 @@ describe('getLanguageCultures', function () {
   it('should return an empty array on invalid lang code', function () {
     expect(languageCultures.getLanguageCultures('invalid lang code')).to.be.have.length.of(0);
   });
+
+  it('should accept case-insensitive inputs', function () {
+    expect(languageCultures.getLanguageCultures('EN')).to.be.an('array');
+    expect(languageCultures.getLanguageCultures('En')).to.be.an('array');
+  });
 });
 
 describe('getCountryLanguages', function () {
@@ -58,6 +68,11 @@ describe('getCountryLanguages', function () {
 
   it('should return an empty array on invalid country code', function () {
     expect(languageCultures.getCountryLanguages('invalid country code')).to.be.have.length.of(0);
+  });
+
+  it('should accept case-insensitive inputs', function () {
+    expect(languageCultures.getCountryLanguages('ch')).to.be.an('array');
+    expect(languageCultures.getCountryLanguages('cH')).to.be.an('array');
   });
 });
 
